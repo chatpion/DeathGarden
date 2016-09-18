@@ -14,10 +14,10 @@ namespace TilemapJam {
 		public ContentRef<Prefab> bunnyPrefab { get; set; }
 
 		private Timer timer;
-		public float spawnTime { get; set; } = 2000f / 0.99f;
-		public float timeScale { get; set; } = 0.99f;
-		public float maxSpawn { get; set; } = 3;
-		public float spawnScale { get; set; } = 1.1f;
+		public float spawnScale { get; set; } = 1.5f;
+		public float SpawnPerSecond { get; set; } = 1;
+
+		private Timer scaleTimer;
 
 		private Random random = new Random();
 
@@ -28,37 +28,39 @@ namespace TilemapJam {
 			}
 
 			if (timer == null)
-				timer = new Timer(spawnTime * timeScale);
+				timer = new Timer(1000f / SpawnPerSecond);
 			if (timer.UpdateAndCheckIfFinished(Time.LastDelta)) {
-				int nb = random.Next((int)maxSpawn + 1);
 				Rect r = GetBounds();
-
-				for (int i = 0; i < nb; i++) {
-					float x = 0, y = 0;
+				
+				float x = 0, y = 0;
+				if (random.NextBool()) {
 					if (random.NextBool()) {
-						if (random.NextBool()) {
-							x = r.X - 50;
-						} else {
-							x = r.X + r.W + 50;
-						}
-						y = random.NextFloat(r.Y, r.Y + r.H);
+						x = r.X - 50;
 					} else {
-						if (random.NextBool()) {
-							y = r.Y - 50;
-						} else {
-							y = r.Y + r.H + 50;
-						}
-						x = random.NextFloat(r.X, r.X + r.W);
+						x = r.X + r.W + 50;
 					}
-
-					GameObject bunny = bunnyPrefab.Res.Instantiate();
-					bunny.Transform.Pos = new Vector3(x, y, 0);
-					this.GameObj.ParentScene.AddObject(bunny);
-					bunny.Parent = this.GameObj;
+					y = random.NextFloat(r.Y, r.Y + r.H);
+				} else {
+					if (random.NextBool()) {
+						y = r.Y - 50;
+					} else {
+						y = r.Y + r.H + 50;
+					}
+					x = random.NextFloat(r.X, r.X + r.W);
 				}
 
+				GameObject bunny = bunnyPrefab.Res.Instantiate();
+				bunny.Transform.Pos = new Vector3(x, y, 0);
+				this.GameObj.ParentScene.AddObject(bunny);
+				bunny.Parent = this.GameObj;
+
 				timer = null;
-				maxSpawn *= spawnScale;
+			}
+
+			if (scaleTimer == null) scaleTimer = new Timer(1000);
+			if (scaleTimer.UpdateAndCheckIfFinished(Time.LastDelta)) {
+				SpawnPerSecond *= spawnScale;
+				scaleTimer = null;
 			}
 		}
 

@@ -1495,10 +1495,8 @@
             <_x003C_bunnyPrefab_x003E_k__BackingField dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
               <contentPath dataType="String">Data\Prefabs\Bunny.Prefab.res</contentPath>
             </_x003C_bunnyPrefab_x003E_k__BackingField>
-            <_x003C_maxSpawn_x003E_k__BackingField dataType="Float">4</_x003C_maxSpawn_x003E_k__BackingField>
-            <_x003C_spawnScale_x003E_k__BackingField dataType="Float">1.05</_x003C_spawnScale_x003E_k__BackingField>
-            <_x003C_spawnTime_x003E_k__BackingField dataType="Float">2020.202</_x003C_spawnTime_x003E_k__BackingField>
-            <_x003C_timeScale_x003E_k__BackingField dataType="Float">0.9</_x003C_timeScale_x003E_k__BackingField>
+            <_x003C_SpawnPerSecond_x003E_k__BackingField dataType="Float">1</_x003C_SpawnPerSecond_x003E_k__BackingField>
+            <_x003C_spawnScale_x003E_k__BackingField dataType="Float">1.02</_x003C_spawnScale_x003E_k__BackingField>
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">2871349540</gameobj>
             <random dataType="Struct" type="System.Random" id="642289498">
@@ -1506,6 +1504,7 @@
               <inextp dataType="Int">21</inextp>
               <SeedArray dataType="Array" type="System.Int32[]" id="338862592">0, 596281418, 1460095081, 1900343645, 765280395, 1742457871, 56466606, 1080179736, 208235492, 1455835072, 1850925498, 2033795549, 501652656, 1435611569, 738352205, 1400203067, 139144544, 209466081, 1322734683, 856048280, 738533332, 1644219719, 1229803331, 353568624, 107427308, 1867407358, 778574014, 1595240110, 1162804765, 289244711, 937493774, 792931524, 1738082406, 1918787828, 2042940790, 781526125, 1466277276, 1087431582, 139320700, 1369490816, 1098338383, 1088633785, 1701456209, 791202532, 1301471837, 478285792, 772827706, 2111577376, 256497812, 294009632, 1560105131, 1227678005, 185630791, 293813939, 174936435, 1301511925</SeedArray>
             </random>
+            <scaleTimer />
             <timer />
           </item>
         </_items>
