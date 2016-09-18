@@ -68,6 +68,7 @@
     <Compile Include="Decayers.cs" />
     <Compile Include="HoverAnimation.cs" />
     <Compile Include="JumpAnimation.cs" />
+    <Compile Include="LoseMessage.cs" />
     <Compile Include="Plant.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerAttack.cs" />

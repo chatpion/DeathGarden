@@ -15,11 +15,9 @@ namespace TilemapJam {
 		[DontSerialize]
 		public int PlantCount = 0;
 
-		public GameObject lose1 { get; set; }
-		public GameObject lose2 { get; set; }
-		public GameObject lose3 { get; set; }
-
 		public GameObject time { get; set; }
+
+		public LoseMessage Lose { get; set; }
 
 		public override void Kill (Alive a) {
 			if (IsBunny(a)) {
@@ -39,19 +37,16 @@ namespace TilemapJam {
 		}
 
 		public void ShowDeathMsg (Alive attacker) {
-			lose1.Active = true;
 			string name = "";
 			if (IsBunny(attacker))
                 name = "A bunny";
 			else
 				name = "Time";
-            lose1.GetComponent<TextRenderer>().Text.SourceText = name + " has stopped you !";
 
-			lose2.Active = true;
-			lose2.GetComponent<TextRenderer>().Text.SourceText = "You reaped " + PlantCount + " pretty flowers and";
-
-			lose3.Active = true;
-			lose3.GetComponent<TextRenderer>().Text.SourceText = BunnyCount + " innocent cute little bunnies' souls";
+			Lose.Attacker = name;
+			Lose.BunnyCount = BunnyCount;
+			Lose.PlantCount = PlantCount;
+			Lose.Show();
         }
 
 		private Timer timer;
