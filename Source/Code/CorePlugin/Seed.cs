@@ -1,0 +1,59 @@
+﻿using Duality;
+using Duality.Plugins.Tilemaps;
+using Duality.Resources;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TilemapJam {
+	public class Seed : Component, ICmpUpdatable {
+
+		public float maxDuration { get; set; } = 5000;
+		[DontSerialize]
+		private Timer timer;
+
+		public ContentRef<Prefab> plantPrefab { get; set; }
+
+		public Tilemap tilemap { get; set; }
+
+		public void OnUpdate () {
+			if (tilemap == null) {
+				//Log.Editor.Write("no tilemap for seed");
+				tilemap = this.GameObj.ParentScene.FindComponent<TilemapHolder>().Background;
+				return;
+			}
+			if (timer == null) timer = new Timer(maxDuration);
+			if (timer.UpdateAndCheckIfFinished(Time.LastDelta)) {
+				this.GameObj.DisposeLater();
+			} else {
+				this.CheckIfCanPlant();
+			}
+		}
+
+		public void CheckIfCanPlant() {
+			Point2 pos = tilemap.GameObj.GetComponent<TilemapRenderer>().GetTileAtLocalPos(this.GameObj.Transform.Pos.Xy, TilePickMode.Clamp);
+			if (tilemap.Tiles[pos.X, pos.Y].BaseIndex == 1) {
+				GameObject plant = plantPrefab.Res.Instantiate();
+				plant.Transform.Pos = new Vector3(GetCenterFromTile(pos));
+				this.GameObj.ParentScene.AddObject(plant);
+				plant.GetComponent<Plant>().PlantItSelf(pos);
+				Decayers d = this.GameObj.ParentScene.FindComponent<Decayers>();
+				d.ToDust.RemoveTimerAt(pos);
+
+				tilemap.SetTile(pos.X, pos.Y, new Tile(2));
+				d.ToGrass.RemoveTimerAt(pos);
+
+				this.GameObj.DisposeLater();
+			}
+		}
+
+		private Vector2 GetCenterFromTile (Point2 pt) {
+			Vector2 tileSize = tilemap.Tileset.Res.TileSize;
+			Vector2 TopLeft = tilemap.GameObj.Transform.Pos.Xy - new Vector2((((float)tilemap.Size.X) / 2) * tileSize.X, (((float)tilemap.Size.Y) / 2f) * tileSize.Y);
+			return new Vector2(TopLeft.X + tileSize.X * pt.X + tileSize.X / 2, TopLeft.Y + tileSize.Y * pt.Y + tileSize.Y / 2);
+		}
+
+	}
+}

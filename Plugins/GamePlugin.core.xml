@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GamePlugin.core</name>
+    </assembly>
+    <members>
+        <member name="T:TilemapJam.TilemapJamCorePlugin">
+            <summary>
+            Defines a Duality core plugin.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.Rect">
+            <summary>
+            [GET / SET] The rectangular area the sprite occupies. Relative to the <see cref="T:Duality.GameObject"/>.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.SharedMaterial">
+            <summary>
+            [GET / SET] The <see cref="T:Duality.Resources.Material"/> that is used for rendering the sprite.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.CustomMaterial">
+            <summary>
+            [GET / SET] A custom, local <see cref="T:Duality.Drawing.BatchInfo"/> overriding the <see cref="P:TilemapJam.CustomActorRenderer.SharedMaterial"/>,
+            allowing this sprite to look unique without having to create its own <see cref="T:Duality.Resources.Material"/> Resource.
+            However, this feature should be used with caution: Performance is better using <see cref="P:TilemapJam.CustomActorRenderer.SharedMaterial">shared Materials</see>.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.ColorTint">
+            <summary>
+            [GET / SET] A color by which the sprite is tinted.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.DepthOffset">
+            <summary>
+            [GET / SET] The depth offset for the <see cref="T:TilemapJam.CustomActorRenderer"/> that is added
+            to each output vertex without contributing to perspective effects such as parallax.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.DepthScale">
+            <summary>
+            [GET / SET] The depth offset scale that is used to determine how much depth each 
+            unit of Y movement adds.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.IsVertical">
+            <summary>
+            [GET / SET] Whether the rendered sprite is considered vertical or flat with regard
+            to its depth offset generation.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.Height">
+            <summary>
+            [GET / SET] The actor's current height above the ground. This is usually
+            zero / the same as the ground level, except when jumping, floating or being 
+            partially submerged.
+            </summary>
+        </member>
+        <member name="P:TilemapJam.CustomActorRenderer.SpriteIndex">
+            <summary>
+            [GET / SET] The sprite index that should be used for rendering this actor.
+            When set to -1, the entire <see cref="T:Duality.Resources.Texture"/> will be used without any
+            sprite sheet functionality.
+            </summary>
+        </member>
+        <member name="M:TilemapJam.CustomActorRenderer.GetDepthOffsetAt(Duality.Vector2)">
+            <summary>
+            Determines the depth offset that is generated at the specified world position.
+            This also inclues the renderers overall offset as specified in <see cref="P:TilemapJam.CustomActorRenderer.DepthOffset"/>.
+            </summary>
+            <param name="worldPos"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
