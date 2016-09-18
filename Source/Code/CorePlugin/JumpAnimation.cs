@@ -13,7 +13,7 @@ namespace TilemapJam {
 		public void OnUpdate () {
 			CustomActorRenderer actor = this.GameObj.GetComponent<CustomActorRenderer>();
 			if (actor.Height <= 1 && !this.GameObj.GetComponent<Bunny>().IsTracking) return;
-
+				
 			timeElapsed += Time.LastDelta;
 			x = 2 * timeElapsed / (Duration * 1000) - 1;
 			if (x >= 1) {

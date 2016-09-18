@@ -119,7 +119,7 @@ namespace TilemapJam {
 			if (timer == null)
 				timer = new Timer(attackCooldown);
 			if (timer.UpdateAndCheckIfFinished(Time.LastDelta)) {
-				target.TakeDmg(attack, this);
+				target.TakeDmg((int)(attack * this.GameObj.Transform.Scale), this);
 				timer = new Timer(attackCooldown);
 			}
 		}
