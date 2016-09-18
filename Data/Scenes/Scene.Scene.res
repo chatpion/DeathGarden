@@ -775,7 +775,6 @@
             <_x003C_attackRadius_x003E_k__BackingField dataType="Float">0.75</_x003C_attackRadius_x003E_k__BackingField>
             <_x003C_decayerToDust_x003E_k__BackingField dataType="Struct" type="TilemapJam.DecayTile" id="1169164951">
               <_x003C_decayTime_x003E_k__BackingField dataType="Float">7000</_x003C_decayTime_x003E_k__BackingField>
-              <_x003C_defaultIndex_x003E_k__BackingField dataType="Int">0</_x003C_defaultIndex_x003E_k__BackingField>
               <_x003C_tilemap_x003E_k__BackingField dataType="Struct" type="Duality.Plugins.Tilemaps.Tilemap" id="2892344289">
                 <active dataType="Bool">true</active>
                 <gameobj dataType="Struct" type="Duality.GameObject" id="890492272">
@@ -1242,6 +1241,14 @@
                 </tileset>
               </_x003C_tilemap_x003E_k__BackingField>
               <active dataType="Bool">true</active>
+              <decayedTilesIndex dataType="Struct" type="Duality.Grid`1[[System.Int32]]" id="2739252653">
+                <height dataType="Int">32</height>
+                <sequence dataType="Struct" type="Duality.RawList`1[[System.Int32]]" id="3725155686">
+                  <count dataType="Int">1024</count>
+                  <data dataType="Array" type="System.Int32[]" id="393542528">0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</data>
+                </sequence>
+                <width dataType="Int">32</width>
+              </decayedTilesIndex>
               <gameobj dataType="Struct" type="Duality.GameObject" id="1715788091">
                 <active dataType="Bool">true</active>
                 <children />
@@ -1284,20 +1291,27 @@
                           <_items dataType="Array" type="Duality.Component[]" id="1312441616" length="4">
                             <item dataType="Struct" type="TilemapJam.DecayTile" id="3724367898">
                               <_x003C_decayTime_x003E_k__BackingField dataType="Float">12000</_x003C_decayTime_x003E_k__BackingField>
-                              <_x003C_defaultIndex_x003E_k__BackingField dataType="Int">3</_x003C_defaultIndex_x003E_k__BackingField>
                               <_x003C_tilemap_x003E_k__BackingField dataType="ObjectRef">2892344289</_x003C_tilemap_x003E_k__BackingField>
                               <active dataType="Bool">true</active>
+                              <decayedTilesIndex dataType="Struct" type="Duality.Grid`1[[System.Int32]]" id="3760862290">
+                                <height dataType="Int">32</height>
+                                <sequence dataType="Struct" type="Duality.RawList`1[[System.Int32]]" id="688183632">
+                                  <count dataType="Int">1024</count>
+                                  <data dataType="Array" type="System.Int32[]" id="22698940">0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0</data>
+                                </sequence>
+                                <width dataType="Int">32</width>
+                              </decayedTilesIndex>
                               <gameobj dataType="ObjectRef">4270991038</gameobj>
-                              <rand dataType="Struct" type="System.Random" id="3760862290">
+                              <rand dataType="Struct" type="System.Random" id="466861770">
                                 <inext dataType="Int">0</inext>
                                 <inextp dataType="Int">21</inextp>
-                                <SeedArray dataType="Array" type="System.Int32[]" id="688183632">0, 699174185, 1785703197, 487371310, 238049945, 1627428537, 1676287264, 1852743307, 1172461634, 557802849, 639617434, 2088790635, 1946647132, 79031786, 2018713741, 965557719, 1266909303, 1646666403, 1144249792, 477932416, 1289407163, 1029774757, 1503916853, 167189431, 580510910, 583825486, 1776524370, 2092025856, 1240151657, 57844426, 1844186939, 883399172, 1664171103, 1838249887, 97249409, 1443015083, 1406099472, 648235458, 1258748701, 1563392118, 656688247, 669906075, 1019352925, 449658329, 694458001, 1717341169, 101935366, 330360144, 952467377, 1000524617, 1882512102, 851801544, 232873232, 1807849951, 1171874307, 1981940588</SeedArray>
+                                <SeedArray dataType="Array" type="System.Int32[]" id="1418880904">0, 699174185, 1785703197, 487371310, 238049945, 1627428537, 1676287264, 1852743307, 1172461634, 557802849, 639617434, 2088790635, 1946647132, 79031786, 2018713741, 965557719, 1266909303, 1646666403, 1144249792, 477932416, 1289407163, 1029774757, 1503916853, 167189431, 580510910, 583825486, 1776524370, 2092025856, 1240151657, 57844426, 1844186939, 883399172, 1664171103, 1838249887, 97249409, 1443015083, 1406099472, 648235458, 1258748701, 1563392118, 656688247, 669906075, 1019352925, 449658329, 694458001, 1717341169, 101935366, 330360144, 952467377, 1000524617, 1882512102, 851801544, 232873232, 1807849951, 1171874307, 1981940588</SeedArray>
                               </rand>
-                              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="466861770">
+                              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="1354736354">
                                 <height dataType="Int">32</height>
-                                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="1418880904">
+                                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="483665696">
                                   <count dataType="Int">1024</count>
-                                  <data dataType="Array" type="TilemapJam.Timer[]" id="2123044204" length="1024" />
+                                  <data dataType="Array" type="TilemapJam.Timer[]" id="1470160860" length="1024" />
                                 </sequence>
                                 <width dataType="Int">32</width>
                               </timers>
@@ -1370,16 +1384,16 @@
                 </parent>
                 <prefabLink />
               </gameobj>
-              <rand dataType="Struct" type="System.Random" id="2739252653">
+              <rand dataType="Struct" type="System.Random" id="4078553464">
                 <inext dataType="Int">0</inext>
                 <inextp dataType="Int">21</inextp>
-                <SeedArray dataType="Array" type="System.Int32[]" id="3725155686">0, 699174185, 1785703197, 487371310, 238049945, 1627428537, 1676287264, 1852743307, 1172461634, 557802849, 639617434, 2088790635, 1946647132, 79031786, 2018713741, 965557719, 1266909303, 1646666403, 1144249792, 477932416, 1289407163, 1029774757, 1503916853, 167189431, 580510910, 583825486, 1776524370, 2092025856, 1240151657, 57844426, 1844186939, 883399172, 1664171103, 1838249887, 97249409, 1443015083, 1406099472, 648235458, 1258748701, 1563392118, 656688247, 669906075, 1019352925, 449658329, 694458001, 1717341169, 101935366, 330360144, 952467377, 1000524617, 1882512102, 851801544, 232873232, 1807849951, 1171874307, 1981940588</SeedArray>
+                <SeedArray dataType="Array" type="System.Int32[]" id="4005222599">0, 699174185, 1785703197, 487371310, 238049945, 1627428537, 1676287264, 1852743307, 1172461634, 557802849, 639617434, 2088790635, 1946647132, 79031786, 2018713741, 965557719, 1266909303, 1646666403, 1144249792, 477932416, 1289407163, 1029774757, 1503916853, 167189431, 580510910, 583825486, 1776524370, 2092025856, 1240151657, 57844426, 1844186939, 883399172, 1664171103, 1838249887, 97249409, 1443015083, 1406099472, 648235458, 1258748701, 1563392118, 656688247, 669906075, 1019352925, 449658329, 694458001, 1717341169, 101935366, 330360144, 952467377, 1000524617, 1882512102, 851801544, 232873232, 1807849951, 1171874307, 1981940588</SeedArray>
               </rand>
-              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="4078553464">
+              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="2134995399">
                 <height dataType="Int">32</height>
-                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="4005222599">
+                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="1210686292">
                   <count dataType="Int">1024</count>
-                  <data dataType="Array" type="TilemapJam.Timer[]" id="1968289486" length="1024" />
+                  <data dataType="Array" type="TilemapJam.Timer[]" id="307423972" length="1024" />
                 </sequence>
                 <width dataType="Int">32</width>
               </timers>
@@ -1510,7 +1524,7 @@
               <contentPath dataType="String">Data\Prefabs\Bunny.Prefab.res</contentPath>
             </_x003C_bunnyPrefab_x003E_k__BackingField>
             <_x003C_SpawnPerSecond_x003E_k__BackingField dataType="Float">1</_x003C_SpawnPerSecond_x003E_k__BackingField>
-            <_x003C_spawnScale_x003E_k__BackingField dataType="Float">1.02</_x003C_spawnScale_x003E_k__BackingField>
+            <_x003C_spawnScale_x003E_k__BackingField dataType="Float">1.05</_x003C_spawnScale_x003E_k__BackingField>
             <active dataType="Bool">true</active>
             <gameobj dataType="ObjectRef">2871349540</gameobj>
             <random dataType="Struct" type="System.Random" id="642289498">
@@ -1549,87 +1563,6 @@
       <prefabLink />
     </item>
     <item dataType="ObjectRef">2786082065</item>
-    <item dataType="Struct" type="Duality.GameObject" id="2056912491">
-      <active dataType="Bool">true</active>
-      <children />
-      <compList dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Component]]" id="1648968729">
-        <_items dataType="Array" type="Duality.Component[]" id="1710878030" length="8">
-          <item dataType="Struct" type="Duality.Components.Transform" id="122260127">
-            <active dataType="Bool">true</active>
-            <gameobj dataType="ObjectRef">2056912491</gameobj>
-          </item>
-          <item dataType="Struct" type="TilemapJam.CustomActorRenderer" id="3246288034">
-            <active dataType="Bool">true</active>
-            <gameobj dataType="ObjectRef">2056912491</gameobj>
-          </item>
-          <item dataType="Struct" type="TilemapJam.JumpAnimation" id="841440155">
-            <active dataType="Bool">true</active>
-            <gameobj dataType="ObjectRef">2056912491</gameobj>
-          </item>
-          <item dataType="Struct" type="TilemapJam.Bunny" id="4134191173">
-            <active dataType="Bool">true</active>
-            <gameobj dataType="ObjectRef">2056912491</gameobj>
-          </item>
-          <item dataType="Struct" type="TilemapJam.CharacterController" id="646390302">
-            <active dataType="Bool">true</active>
-            <gameobj dataType="ObjectRef">2056912491</gameobj>
-          </item>
-        </_items>
-        <_size dataType="Int">5</_size>
-        <_version dataType="Int">5</_version>
-      </compList>
-      <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="3847752576" surrogate="true">
-        <header />
-        <body>
-          <keys dataType="Array" type="System.Object[]" id="2840330035">
-            <item dataType="ObjectRef">709499588</item>
-            <item dataType="ObjectRef">2876068992</item>
-            <item dataType="Type" id="2224678950" value="TilemapJam.JumpAnimation" />
-            <item dataType="Type" id="2387574458" value="TilemapJam.Bunny" />
-            <item dataType="ObjectRef">3973958038</item>
-          </keys>
-          <values dataType="Array" type="System.Object[]" id="2277165752">
-            <item dataType="ObjectRef">122260127</item>
-            <item dataType="ObjectRef">3246288034</item>
-            <item dataType="ObjectRef">841440155</item>
-            <item dataType="ObjectRef">4134191173</item>
-            <item dataType="ObjectRef">646390302</item>
-          </values>
-        </body>
-      </compMap>
-      <compTransform dataType="ObjectRef">122260127</compTransform>
-      <identifier dataType="Struct" type="System.Guid" surrogate="true">
-        <header>
-          <data dataType="Array" type="System.Byte[]" id="715775321">/b6GJx9Fp0CXLxhoxe3QMQ==</data>
-        </header>
-        <body />
-      </identifier>
-      <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
-      <name dataType="String">Bunny</name>
-      <parent />
-      <prefabLink dataType="Struct" type="Duality.Resources.PrefabLink" id="3311034971">
-        <changes dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Resources.PrefabLink+VarMod]]" id="4001136212">
-          <_items dataType="Array" type="Duality.Resources.PrefabLink+VarMod[]" id="2829587684" length="4">
-            <item dataType="Struct" type="Duality.Resources.PrefabLink+VarMod">
-              <childIndex dataType="Struct" type="System.Collections.Generic.List`1[[System.Int32]]" id="3549661384">
-                <_items dataType="Array" type="System.Int32[]" id="3588094572"></_items>
-                <_size dataType="Int">0</_size>
-                <_version dataType="Int">1</_version>
-              </childIndex>
-              <componentType dataType="ObjectRef">2387574458</componentType>
-              <prop dataType="MemberInfo" id="1845502686" value="P:TilemapJam.Alive:AttackedCooldownTime" />
-              <val dataType="Float">300</val>
-            </item>
-          </_items>
-          <_size dataType="Int">1</_size>
-          <_version dataType="Int">5</_version>
-        </changes>
-        <obj dataType="ObjectRef">2056912491</obj>
-        <prefab dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
-          <contentPath dataType="String">Data\Prefabs\Bunny.Prefab.res</contentPath>
-        </prefab>
-      </prefabLink>
-    </item>
     <item dataType="ObjectRef">3327357866</item>
     <item dataType="ObjectRef">890492272</item>
     <item dataType="ObjectRef">1138827133</item>

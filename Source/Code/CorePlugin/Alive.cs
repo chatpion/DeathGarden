@@ -21,8 +21,7 @@ namespace TilemapJam {
 		public void TakeDmg(int dmg, Alive attacker) {
 			if (IsDead()) return;
 
-			if (AttackedCooldown == null) AttackedCooldown = new Timer(AttackedCooldownTime);
-			if (AttackedCooldown.IsFinished()) {
+			if (AttackedCooldown == null || AttackedCooldown.IsFinished()) {
 				currentHealth -= dmg;
 				OnAttacked();
 				if (IsDead()) {
@@ -30,6 +29,7 @@ namespace TilemapJam {
 				}
 				AttackedCooldown = null;
 			}
+			if (AttackedCooldown == null) AttackedCooldown = new Timer(AttackedCooldownTime);
 		}
 
 		public void Die(Alive attacker) {

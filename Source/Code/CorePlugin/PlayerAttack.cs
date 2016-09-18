@@ -78,7 +78,27 @@ namespace TilemapJam {
 					if (CantModifyTile(tilemap.Tiles[pt.X, pt.Y].BaseIndex)) continue;
 					if (IsOutOfRadius(pt)) continue;
 
-					PaintTiles(pt);
+					SetTile(pt.X, pt.Y, new Tile(1));
+					updatedTiles.Add(new Point2(pt.X - 1, pt.Y - 1));
+					updatedTiles.Add(new Point2(pt.X,     pt.Y - 1));
+					updatedTiles.Add(new Point2(pt.X + 1, pt.Y - 1));
+					updatedTiles.Add(new Point2(pt.X - 1, pt.Y));
+					updatedTiles.Add(new Point2(pt.X,     pt.Y));
+					updatedTiles.Add(new Point2(pt.X + 1, pt.Y));
+					updatedTiles.Add(new Point2(pt.X - 1, pt.Y + 1));
+					updatedTiles.Add(new Point2(pt.X,     pt.Y + 1));
+					updatedTiles.Add(new Point2(pt.X + 1, pt.Y + 1));
+				}
+
+				List<Point2> toPaint = new List<Point2>();
+				foreach (Point2 pt in updatedTiles) {
+					if (!IsFullAt(pt.X, pt.Y))
+						toPaint.Add(pt);
+				}
+
+				foreach (Point2 pt in toPaint) {
+					Tile t = new Tile(GetTileType(pt));
+					SetTile(pt.X, pt.Y, t);
 				}
 
 				Attack();
@@ -89,23 +109,52 @@ namespace TilemapJam {
 			}
 		}
 
-		private void PaintTiles(Point2 pt) {
-			SetTile(pt.X - 1, pt.Y - 1, new Tile(26));
-			SetTile(pt.X, pt.Y - 1, new Tile(16));
-			SetTile(pt.X + 1, pt.Y - 1, new Tile(27));
-			SetTile(pt.X - 1, pt.Y, new Tile(19));
-			SetTile(pt.X, pt.Y, new Tile(1));
-			SetTile(pt.X + 1, pt.Y, new Tile(17));
-			SetTile(pt.X - 1, pt.Y + 1, new Tile(25));
-			SetTile(pt.X, pt.Y + 1, new Tile(18));
-			SetTile(pt.X, pt.Y + 1, new Tile(24));
+		private int GetTileType(Point2 pt) {
+			if (MatchesPattern(pt, Array(0, 0, 0, 0, 0, 0, 0, 1))) return 26; // TOP LEFT
+			if (MatchesPattern(pt, Array(0, 0, 0, 0, 0, 1, 0, 0))) return 27; // TOP RIGHT
+			if (MatchesPattern(pt, Array(0, 0, 1, 0, 0, 0, 0, 0))) return 25; // BOTTOM LEFT
+			if (MatchesPattern(pt, Array(1, 0, 0, 0, 0, 0, 0, 0))) return 24; // BOTTOM RIGHT
+
+			if (MatchesPattern(pt, Array(0, 0, 0, 0, 0, 2, 1, 2))) return 16; // TOP
+			if (MatchesPattern(pt, Array(0, 0, 2, 0, 1, 0, 0, 2))) return 19; // LEFT
+			if (MatchesPattern(pt, Array(2, 0, 0, 1, 0, 2, 0, 0))) return 17; // RIGHT
+			if (MatchesPattern(pt, Array(2, 1, 2, 0, 0, 0, 0, 0))) return 18; // BOTTOM
+
+			if (MatchesPattern(pt, Array(2, 0, 0, 1, 0, 2, 1, 2))) return 20; // TOP RIGHT
+			if (MatchesPattern(pt, Array(0, 0, 2, 0, 1, 2, 1, 2))) return 21; // TOP LEFT
+			if (MatchesPattern(pt, Array(2 ,1, 2, 0, 1, 0, 0, 2))) return 22; // BOTTOM LEFT
+			if (MatchesPattern(pt, Array(2, 1, 2, 1, 0, 2, 0, 0))) return 23; // BOTTOM RIGHT
+			return 1;
+		}
+
+		private int[][] Array(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8) {
+			return new int[][]{ new int[]{ a1, a2, a3}, new int[] { a4, 2, a5}, new int[] { a6, a7, a8} };
 		}
 
 		// a1 a2 a3
 		// a4 XX a5
 		// a6 a7 a8
-		private bool MatchesPattern(bool a1, bool a2, bool a3, bool a4, bool a5, bool a6, bool a7, bool a8) {
+		// 0 <- not full
+		// 1 <- full
+		// 2 <- don't care
+		private bool MatchesPattern(Point2 pt, int[][] pattern) {
+			int x = pt.X - 1;
+			int y = pt.Y - 1;
 
+			for (int iy = 0; iy < pattern.Count(); iy++) {
+				for (int ix = 0; ix < pattern[iy].Count(); ix++) {
+					int p = pattern[iy][ix];
+					if (p == 2) continue;
+					bool full = p == 1;
+					if (IsFullAt(x + ix, y + iy) != full) return false; 
+				}
+			}
+
+			return true;
+		}
+
+		private bool IsFullAt(int x, int y) {
+			return this.tilemap.Tiles[x, y].BaseIndex == 1;
 		}
 
 		private void Attack() {
@@ -126,15 +175,34 @@ namespace TilemapJam {
 		}
 
 		private void SetTile(int x, int y, Tile t) {
-			if (tilemap.Tiles[x, y].BaseIndex == 3) {
+			int i = tilemap.Tiles[x, y].BaseIndex;
+            if (i != 0) {
 				tilemap.SetTile(x, y, t);
 
 				Point2 tile = new Point2(x, y);
 				if (this.GameObj.ParentScene.FindComponent<TilemapHolder>().Layer0.Tiles[x, y].BaseIndex == 9) {
-					decayerToDust.SetTimerAt(tile);
-					decayerToGrass.SetTimerAt(tile);
+					decayerToDust.SetTimerAt(tile, GetDecayed(t.BaseIndex));
+					decayerToGrass.SetTimerAt(tile, 3);
 				}
 			}
+		}
+
+		private int GetDecayed(int index) {
+			switch (index) {
+				case 26: return 14;
+				case 27: return 15;
+				case 25: return 13;
+				case 24: return 12;
+				case 16: return 6;
+				case 19: return 5;
+				case 17: return 4;
+				case 18: return 7;
+				case 20: return 8;
+				case 21: return 9;
+				case 22: return 11;
+				case 23: return 10;
+			}
+			return 0;
 		}
 
 		private Rect GetTileFromPoint(Point2 pt) {

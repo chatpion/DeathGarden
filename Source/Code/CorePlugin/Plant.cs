@@ -87,7 +87,7 @@ namespace TilemapJam {
 
 			if (this.GameObj != null && this.GameObj.ParentScene != null && this.GameObj.ParentScene.FindComponent<TilemapHolder>() != null) {
 				background.SetTile(p.X, p.Y, new Tile(0));
-				d.ToGrass.SetTimerAt(pos);
+				d.ToGrass.SetTimerAt(pos, 3);
 			}
 		}
 
