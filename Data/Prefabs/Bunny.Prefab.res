@@ -50,10 +50,10 @@
           <isVertical dataType="Bool">true</isVertical>
           <offset dataType="Float">-1</offset>
           <rect dataType="Struct" type="Duality.Rect">
-            <H dataType="Float">32</H>
-            <W dataType="Float">32</W>
-            <X dataType="Float">-19</X>
-            <Y dataType="Float">-28</Y>
+            <H dataType="Float">27</H>
+            <W dataType="Float">27</W>
+            <X dataType="Float">-15</X>
+            <Y dataType="Float">-24</Y>
           </rect>
           <sharedMat dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Material]]">
             <contentPath dataType="String">Data\Graphics\rabbit.Material.res</contentPath>
@@ -73,11 +73,12 @@
           <_x003C_attack_x003E_k__BackingField dataType="Int">5</_x003C_attack_x003E_k__BackingField>
           <_x003C_attackCooldown_x003E_k__BackingField dataType="Float">500</_x003C_attackCooldown_x003E_k__BackingField>
           <_x003C_attackRadius_x003E_k__BackingField dataType="Float">0.5</_x003C_attackRadius_x003E_k__BackingField>
+          <_x003C_BaseHealth_x003E_k__BackingField dataType="Int">10</_x003C_BaseHealth_x003E_k__BackingField>
           <_x003C_currentHealth_x003E_k__BackingField dataType="Int">10</_x003C_currentHealth_x003E_k__BackingField>
           <_x003C_IsTracking_x003E_k__BackingField dataType="Bool">true</_x003C_IsTracking_x003E_k__BackingField>
           <_x003C_maxSeed_x003E_k__BackingField dataType="Int">3</_x003C_maxSeed_x003E_k__BackingField>
-          <_x003C_maxSeedDist_x003E_k__BackingField dataType="Float">50</_x003C_maxSeedDist_x003E_k__BackingField>
-          <_x003C_minSeedDist_x003E_k__BackingField dataType="Float">15</_x003C_minSeedDist_x003E_k__BackingField>
+          <_x003C_maxSeedDist_x003E_k__BackingField dataType="Float">0.2</_x003C_maxSeedDist_x003E_k__BackingField>
+          <_x003C_minSeedDist_x003E_k__BackingField dataType="Float">0.02</_x003C_minSeedDist_x003E_k__BackingField>
           <_x003C_seedPrefab_x003E_k__BackingField dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
             <contentPath dataType="String">Data\Prefabs\Seed.Prefab.res</contentPath>
           </_x003C_seedPrefab_x003E_k__BackingField>
@@ -85,6 +86,7 @@
           <_x003C_tileSize_x003E_k__BackingField dataType="Float">16</_x003C_tileSize_x003E_k__BackingField>
           <_x003C_totalHealth_x003E_k__BackingField dataType="Int">10</_x003C_totalHealth_x003E_k__BackingField>
           <active dataType="Bool">true</active>
+          <fav dataType="Enum" type="TilemapJam.Bunny+Favorite" name="Rest" value="2" />
           <gameobj dataType="ObjectRef">2593175096</gameobj>
           <timer />
         </item>

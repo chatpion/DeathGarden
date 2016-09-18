@@ -19,6 +19,8 @@ namespace TilemapJam {
 			Young = 0, GrownUp = 1, Rest = 2
 		}
 
+		public int BaseHealth { get; set; }
+
 		public int maxSeed { get; set; } = 5;
 		public float minSeedDist { get; set; } = 10;
 		public float maxSeedDist { get; set; } = 30;
@@ -38,13 +40,15 @@ namespace TilemapJam {
 		}
 
 		public override void OnDeath (Alive a) {
-			int nbSeed = rand.Next(1, maxSeed + 1);
+			int nbSeed = rand.Next(1, maxSeed + (int)this.GameObj.Transform.Scale);
 			for (int i = 0; i  < nbSeed; i++) {
 				float alpha = rand.NextFloat(MathF.TwoPi);
 				float radius = rand.NextFloat(minSeedDist, maxSeedDist);
 				GameObject seed = seedPrefab.Res.Instantiate();
-				seed.Transform.Pos = this.GameObj.Transform.Pos + new Vector3(MathF.Cos(alpha) * radius, MathF.Sin(alpha) * radius, 0);
-				this.GameObj.ParentScene.AddObject(seed);
+				seed.Transform.Pos = this.GameObj.Transform.Pos;
+				seed.GetComponent<Seed>().direction = new Vector3(MathF.Cos(alpha) * radius, MathF.Sin(alpha) * radius, rand.NextFloat(0.5f, 2));
+				seed.GetComponent<CustomActorRenderer>().Height = 0;
+                this.GameObj.ParentScene.AddObject(seed);
 			}
 		}
 
@@ -66,6 +70,8 @@ namespace TilemapJam {
 			} else {
 				Attack();
             }
+			
+			this.GameObj.Transform.Scale = MathF.Log(((float)this.totalHealth / (float)this.BaseHealth)) + 1;
 		}
 
 		private bool NeedToChangeTarget(Alive player) {

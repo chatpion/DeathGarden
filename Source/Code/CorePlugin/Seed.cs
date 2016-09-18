@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace TilemapJam {
 	public class Seed : Component, ICmpUpdatable {
 
-		public float maxDuration { get; set; } = 5000;
+		public float maxDuration { get; set; } = 3000;
 		[DontSerialize]
 		private Timer timer;
 
@@ -18,18 +18,36 @@ namespace TilemapJam {
 
 		public Tilemap tilemap { get; set; }
 
+		public Vector3 direction { get; set; }
+		private bool OnGround = false;
+		public CustomActorRenderer car;
+
 		public void OnUpdate () {
 			if (tilemap == null) {
 				//Log.Editor.Write("no tilemap for seed");
 				tilemap = this.GameObj.ParentScene.FindComponent<TilemapHolder>().Background;
 				return;
 			}
-			if (timer == null) timer = new Timer(maxDuration);
-			if (timer.UpdateAndCheckIfFinished(Time.LastDelta)) {
-				this.GameObj.DisposeLater();
+
+			if (car == null) car = this.GameObj.GetComponent<CustomActorRenderer>();
+
+			if (!this.OnGround) {
+				
+				this.direction -= new Vector3(0, 0, 0.01f * Time.LastDelta);
+				this.GameObj.Transform.Pos += new Vector3(this.direction.Xy * Time.LastDelta);
+				this.car.Height += this.direction.Z * Time.LastDelta;
+				Log.Editor.Write(this.car.Height.ToString());
+				if (this.car.Height <= 0 && this.direction.Z < 0) {
+					this.OnGround = true;
+				}
 			} else {
-				this.CheckIfCanPlant();
-			}
+				if (timer == null) timer = new Timer(maxDuration);
+				if (timer.UpdateAndCheckIfFinished(Time.LastDelta)) {
+					this.GameObj.DisposeLater();
+				} else {
+					this.CheckIfCanPlant();
+				}
+            }
 		}
 
 		public void CheckIfCanPlant() {
