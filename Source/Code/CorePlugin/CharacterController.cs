@@ -46,7 +46,7 @@ namespace TilemapJam {
 			this.velocity += this.acceleration * (Time.LastDelta / 1000);
 
 			if (IsOverMaxSpeed()) {
-				this.velocity *= maxSpeed / this.velocity.Length;
+				//this.velocity *= maxSpeed / this.velocity.Length;
             }
 			this.GameObj.Transform.Pos += new Vector3(this.velocity * (Time.LastDelta / 1000));
 			this.acceleration = Vector2.Zero;
@@ -55,15 +55,15 @@ namespace TilemapJam {
 		public void SetFlip() {
 			CustomActorRenderer car = this.GameObj.GetComponent<CustomActorRenderer>();
 			SpriteRenderer.FlipMode flip = car.flip;
-			if (this.acceleration.X < 0)
+			if (MathF.RoundToInt(this.Velocity.X / 10) < 0)
 				flip = SpriteRenderer.FlipMode.Horizontal;
-			else if (this.acceleration.X > 0)
+			else if (MathF.RoundToInt(this.Velocity.X / 10) > 0)
 				flip = SpriteRenderer.FlipMode.None;
 			car.flip = flip;
 		}
 
 		private bool MustSlowDown() {
-			return this.acceleration.Equals(Vector2.Zero) && !this.velocity.Equals(Vector2.Zero) && !isAttacking;
+			return (this.acceleration.Equals(Vector2.Zero) && !this.velocity.Equals(Vector2.Zero) && !isAttacking) || IsOverMaxSpeed();
         }
 
 		private bool IsOverMaxSpeed() {

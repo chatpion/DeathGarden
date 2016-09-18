@@ -22,12 +22,16 @@ namespace TilemapJam {
 		[DontSerialize]
 		public Timer attackTimer;
 
+		private Timer attackTimerCooldown;
+
 		public float attackDuration { get; set; } = 175;
 		public float attackCooldown { get; set; } = 300;
 		public float attackAccel { get; set; } = 10000;
 		public float attackMaxSpeed { get; set; } = 500;
 		public float attackRadius { get; set; } = 1;
 		public int attack { get; set; } = 10;
+
+		public float AttackForce { get; set; } = 10;
 
 		public DecayTile decayerToDust { get; set; }
 		public DecayTile decayerToGrass { get; set; }
@@ -44,17 +48,18 @@ namespace TilemapJam {
 				player.isAttacking = true;
 				
 				attackTimer = new Timer(attackDuration);
+
+				player.Velocity = this.attackDirection * attackAccel;
 			}
 
 			//ResetMap();
 
 			if (player.isAttacking) {
-				player.Acceleration = this.attackDirection * attackAccel;
-				
 				if (attackTimer.UpdateAndCheckIfFinished(Time.LastDelta)) {
 					player.maxSpeed = player.defaultMaxSpeed;
 					player.isAttacking = false;
-					attackTimer = new Timer(attackCooldown);
+					attackTimer = null;
+					attackTimerCooldown = new Timer(attackCooldown);
 				}
 
 				Vector2 playerPos = player.GameObj.Transform.Pos.Xy;
@@ -73,22 +78,34 @@ namespace TilemapJam {
 					if (CantModifyTile(tilemap.Tiles[pt.X, pt.Y].BaseIndex)) continue;
 					if (IsOutOfRadius(pt)) continue;
 
-					/*SetTile(pt.X-1, pt.Y-1, new Tile(26));
-					SetTile(pt.X, pt.Y-1, new Tile(16));
-					SetTile(pt.X+1, pt.Y-1, new Tile(27));
-					SetTile(pt.X-1, pt.Y, new Tile(19));*/
-					SetTile(pt.X, pt.Y, new Tile(1));
-					/*SetTile(pt.X+1, pt.Y, new Tile(17));
-					SetTile(pt.X-1, pt.Y+1, new Tile(25));
-					SetTile(pt.X, pt.Y+1, new Tile(18));
-					SetTile(pt.X, pt.Y+1, new Tile(24));*/
+					PaintTiles(pt);
 				}
 
 				Attack();
 
-			} else if (attackTimer != null) {
-				attackTimer.UpdateAndCheckIfFinished(Time.LastDelta);
 			}
+			if (attackTimerCooldown != null) {
+				attackTimerCooldown.UpdateAndCheckIfFinished(Time.LastDelta);
+			}
+		}
+
+		private void PaintTiles(Point2 pt) {
+			SetTile(pt.X - 1, pt.Y - 1, new Tile(26));
+			SetTile(pt.X, pt.Y - 1, new Tile(16));
+			SetTile(pt.X + 1, pt.Y - 1, new Tile(27));
+			SetTile(pt.X - 1, pt.Y, new Tile(19));
+			SetTile(pt.X, pt.Y, new Tile(1));
+			SetTile(pt.X + 1, pt.Y, new Tile(17));
+			SetTile(pt.X - 1, pt.Y + 1, new Tile(25));
+			SetTile(pt.X, pt.Y + 1, new Tile(18));
+			SetTile(pt.X, pt.Y + 1, new Tile(24));
+		}
+
+		// a1 a2 a3
+		// a4 XX a5
+		// a6 a7 a8
+		private bool MatchesPattern(bool a1, bool a2, bool a3, bool a4, bool a5, bool a6, bool a7, bool a8) {
+
 		}
 
 		private void Attack() {
@@ -102,6 +119,8 @@ namespace TilemapJam {
 			foreach (Bunny bunny in this.GameObj.ParentScene.FindComponents<Bunny>()) { 
 				if (IsBunnyInRange(bunny.GameObj.Transform.Pos.Xy)) {
 					bunny.TakeDmg(attack, this.player.GameObj.GetComponent<Player>());
+					CharacterController bCar = bunny.GameObj.GetComponent<CharacterController>();
+					bCar.Velocity = ((bunny.GameObj.Transform.Pos - this.player.GameObj.Transform.Pos).Normalized * AttackForce ).Xy;
 				}
 			}
 		}
@@ -172,7 +191,7 @@ namespace TilemapJam {
 		}
 
 		private bool CanAttack() {
-			return !player.isAttacking && DualityApp.Mouse.ButtonHit(Duality.Input.MouseButton.Left) && (attackTimer == null || attackTimer.IsFinished());
+			return !player.isAttacking && DualityApp.Mouse.ButtonHit(Duality.Input.MouseButton.Left) && (attackTimerCooldown == null || attackTimerCooldown.IsFinished());
         }
 
 		float ICmpRenderer.BoundRadius {

@@ -72,6 +72,7 @@
         <item dataType="Struct" type="TilemapJam.Bunny" id="375486482">
           <_x003C_attack_x003E_k__BackingField dataType="Int">5</_x003C_attack_x003E_k__BackingField>
           <_x003C_attackCooldown_x003E_k__BackingField dataType="Float">500</_x003C_attackCooldown_x003E_k__BackingField>
+          <_x003C_AttackedCooldownTime_x003E_k__BackingField dataType="Float">300</_x003C_AttackedCooldownTime_x003E_k__BackingField>
           <_x003C_attackRadius_x003E_k__BackingField dataType="Float">0.5</_x003C_attackRadius_x003E_k__BackingField>
           <_x003C_BaseHealth_x003E_k__BackingField dataType="Int">10</_x003C_BaseHealth_x003E_k__BackingField>
           <_x003C_currentHealth_x003E_k__BackingField dataType="Int">10</_x003C_currentHealth_x003E_k__BackingField>
@@ -86,7 +87,8 @@
           <_x003C_tileSize_x003E_k__BackingField dataType="Float">16</_x003C_tileSize_x003E_k__BackingField>
           <_x003C_totalHealth_x003E_k__BackingField dataType="Int">10</_x003C_totalHealth_x003E_k__BackingField>
           <active dataType="Bool">true</active>
-          <fav dataType="Enum" type="TilemapJam.Bunny+Favorite" name="Rest" value="2" />
+          <AttackedCooldown />
+          <fav dataType="Enum" type="TilemapJam.Bunny+Favorite" name="GrownUp" value="1" />
           <gameobj dataType="ObjectRef">2593175096</gameobj>
           <timer />
         </item>

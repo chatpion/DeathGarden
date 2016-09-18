@@ -17,6 +17,8 @@ namespace TilemapJam {
 
 		public Grid<Timer> timers;
 
+		private Random rand = new Random();
+
 		public void OnUpdate() {
 			if (tilemap == null) {
 				Log.Editor.Write("null tilemap");
@@ -39,7 +41,7 @@ namespace TilemapJam {
 		}
 
 		public void SetTimerAt(Point2 point) {
-			this.timers[point.X, point.Y] = new Timer(decayTime);
+			this.timers[point.X, point.Y] = new Timer(decayTime + rand.NextFloat(-decayTime * 0.1f, decayTime * 0.1f));
 		}
 
 		public void RemoveTimerAt(Point2 point) {

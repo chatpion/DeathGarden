@@ -29,7 +29,7 @@ namespace TilemapJam {
 			RemoveTiles(this.pos);
 		}
 
-		public override void OnUpdate () {
+		public override void Update () {
 			if (growthHeight < 3 && !GrownUp) {
 				if (timer == null)
 					timer = new Timer(growthDuration);
@@ -107,6 +107,10 @@ namespace TilemapJam {
 
 		private void SetTile(int y, int tileId) {
 			GetLayer(y).SetTile(pos.X, pos.Y - y, new Tile(tileId));
+		}
+
+		public override void OnAttacked () {
+
 		}
 	}
 }

@@ -36,7 +36,6 @@ namespace TilemapJam {
 				this.direction -= new Vector3(0, 0, 0.01f * Time.LastDelta);
 				this.GameObj.Transform.Pos += new Vector3(this.direction.Xy * Time.LastDelta);
 				this.car.Height += this.direction.Z * Time.LastDelta;
-				Log.Editor.Write(this.car.Height.ToString());
 				if (this.car.Height <= 0 && this.direction.Z < 0) {
 					this.OnGround = true;
 				}

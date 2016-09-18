@@ -51,7 +51,7 @@ namespace TilemapJam {
 
 		private Timer timer;
 
-		public override void OnUpdate () {
+		public override void Update () {
 			if (timer == null)
 				timer = new Timer(1000);
 			if (timer.UpdateAndCheckIfFinished(Time.LastDelta)) {
@@ -70,5 +70,8 @@ namespace TilemapJam {
 			return (a.GetType() == typeof(Plant));
 		}
 
+		public override void OnAttacked () {
+
+		}
 	}
 }

@@ -52,7 +52,7 @@ namespace TilemapJam {
 			}
 		}
 
-		public override void OnUpdate () {
+		public override void Update () {
 			Player player = this.GameObj.ParentScene.FindComponent<Player>();
 			if (player == null) return;
 
@@ -106,7 +106,7 @@ namespace TilemapJam {
 		}
 
 		private void Track() {
-			if (!this.target.GameObj.Transform.Pos.Xy.Equals(this.GameObj.Transform.Pos.Xy)) {
+			if (!this.target.GameObj.Transform.Pos.Xy.Equals(this.GameObj.Transform.Pos.Xy) && (this.AttackedCooldown == null || this.AttackedCooldown.IsFinished())) {
 				CharacterController cc = this.GameObj.GetComponent<CharacterController>();
 				if (cc == null) {
 					return;
@@ -135,6 +135,10 @@ namespace TilemapJam {
 		}
 
 		void ICmpInitializable.OnShutdown (ShutdownContext context) {
+
+		}
+
+		public override void OnAttacked () {
 
 		}
 	}

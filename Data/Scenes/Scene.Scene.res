@@ -169,6 +169,7 @@
                   <gameobj dataType="ObjectRef">3327357866</gameobj>
                 </item>
                 <item dataType="Struct" type="TilemapJam.Player" id="1513862499">
+                  <_x003C_AttackedCooldownTime_x003E_k__BackingField dataType="Float">300</_x003C_AttackedCooldownTime_x003E_k__BackingField>
                   <_x003C_currentHealth_x003E_k__BackingField dataType="Int">120</_x003C_currentHealth_x003E_k__BackingField>
                   <_x003C_Lose_x003E_k__BackingField dataType="Struct" type="TilemapJam.LoseMessage" id="1706162599">
                     <_x003C_lose1_x003E_k__BackingField dataType="Struct" type="Duality.GameObject" id="573316038">
@@ -685,6 +686,7 @@
                   <_x003C_time_x003E_k__BackingField dataType="ObjectRef">3566866563</_x003C_time_x003E_k__BackingField>
                   <_x003C_totalHealth_x003E_k__BackingField dataType="Int">120</_x003C_totalHealth_x003E_k__BackingField>
                   <active dataType="Bool">true</active>
+                  <AttackedCooldown />
                   <gameobj dataType="ObjectRef">3327357866</gameobj>
                   <timer />
                 </item>
@@ -765,10 +767,11 @@
           </item>
           <item dataType="Struct" type="TilemapJam.PlayerAttack" id="1938712298">
             <_x003C_attack_x003E_k__BackingField dataType="Int">10</_x003C_attack_x003E_k__BackingField>
-            <_x003C_attackAccel_x003E_k__BackingField dataType="Float">10000</_x003C_attackAccel_x003E_k__BackingField>
+            <_x003C_attackAccel_x003E_k__BackingField dataType="Float">200</_x003C_attackAccel_x003E_k__BackingField>
             <_x003C_attackCooldown_x003E_k__BackingField dataType="Float">300</_x003C_attackCooldown_x003E_k__BackingField>
-            <_x003C_attackDuration_x003E_k__BackingField dataType="Float">175</_x003C_attackDuration_x003E_k__BackingField>
-            <_x003C_attackMaxSpeed_x003E_k__BackingField dataType="Float">500</_x003C_attackMaxSpeed_x003E_k__BackingField>
+            <_x003C_attackDuration_x003E_k__BackingField dataType="Float">300</_x003C_attackDuration_x003E_k__BackingField>
+            <_x003C_AttackForce_x003E_k__BackingField dataType="Float">400</_x003C_AttackForce_x003E_k__BackingField>
+            <_x003C_attackMaxSpeed_x003E_k__BackingField dataType="Float">1000</_x003C_attackMaxSpeed_x003E_k__BackingField>
             <_x003C_attackRadius_x003E_k__BackingField dataType="Float">0.75</_x003C_attackRadius_x003E_k__BackingField>
             <_x003C_decayerToDust_x003E_k__BackingField dataType="Struct" type="TilemapJam.DecayTile" id="1169164951">
               <_x003C_decayTime_x003E_k__BackingField dataType="Float">7000</_x003C_decayTime_x003E_k__BackingField>
@@ -1285,11 +1288,16 @@
                               <_x003C_tilemap_x003E_k__BackingField dataType="ObjectRef">2892344289</_x003C_tilemap_x003E_k__BackingField>
                               <active dataType="Bool">true</active>
                               <gameobj dataType="ObjectRef">4270991038</gameobj>
-                              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="3760862290">
+                              <rand dataType="Struct" type="System.Random" id="3760862290">
+                                <inext dataType="Int">0</inext>
+                                <inextp dataType="Int">21</inextp>
+                                <SeedArray dataType="Array" type="System.Int32[]" id="688183632">0, 699174185, 1785703197, 487371310, 238049945, 1627428537, 1676287264, 1852743307, 1172461634, 557802849, 639617434, 2088790635, 1946647132, 79031786, 2018713741, 965557719, 1266909303, 1646666403, 1144249792, 477932416, 1289407163, 1029774757, 1503916853, 167189431, 580510910, 583825486, 1776524370, 2092025856, 1240151657, 57844426, 1844186939, 883399172, 1664171103, 1838249887, 97249409, 1443015083, 1406099472, 648235458, 1258748701, 1563392118, 656688247, 669906075, 1019352925, 449658329, 694458001, 1717341169, 101935366, 330360144, 952467377, 1000524617, 1882512102, 851801544, 232873232, 1807849951, 1171874307, 1981940588</SeedArray>
+                              </rand>
+                              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="466861770">
                                 <height dataType="Int">32</height>
-                                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="688183632">
+                                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="1418880904">
                                   <count dataType="Int">1024</count>
-                                  <data dataType="Array" type="TilemapJam.Timer[]" id="22698940" length="1024" />
+                                  <data dataType="Array" type="TilemapJam.Timer[]" id="2123044204" length="1024" />
                                 </sequence>
                                 <width dataType="Int">32</width>
                               </timers>
@@ -1362,11 +1370,16 @@
                 </parent>
                 <prefabLink />
               </gameobj>
-              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="2739252653">
+              <rand dataType="Struct" type="System.Random" id="2739252653">
+                <inext dataType="Int">0</inext>
+                <inextp dataType="Int">21</inextp>
+                <SeedArray dataType="Array" type="System.Int32[]" id="3725155686">0, 699174185, 1785703197, 487371310, 238049945, 1627428537, 1676287264, 1852743307, 1172461634, 557802849, 639617434, 2088790635, 1946647132, 79031786, 2018713741, 965557719, 1266909303, 1646666403, 1144249792, 477932416, 1289407163, 1029774757, 1503916853, 167189431, 580510910, 583825486, 1776524370, 2092025856, 1240151657, 57844426, 1844186939, 883399172, 1664171103, 1838249887, 97249409, 1443015083, 1406099472, 648235458, 1258748701, 1563392118, 656688247, 669906075, 1019352925, 449658329, 694458001, 1717341169, 101935366, 330360144, 952467377, 1000524617, 1882512102, 851801544, 232873232, 1807849951, 1171874307, 1981940588</SeedArray>
+              </rand>
+              <timers dataType="Struct" type="Duality.Grid`1[[TilemapJam.Timer]]" id="4078553464">
                 <height dataType="Int">32</height>
-                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="3725155686">
+                <sequence dataType="Struct" type="Duality.RawList`1[[TilemapJam.Timer]]" id="4005222599">
                   <count dataType="Int">1024</count>
-                  <data dataType="Array" type="TilemapJam.Timer[]" id="393542528" length="1024" />
+                  <data dataType="Array" type="TilemapJam.Timer[]" id="1968289486" length="1024" />
                 </sequence>
                 <width dataType="Int">32</width>
               </timers>
@@ -1376,6 +1389,7 @@
             <_x003C_tilemap_x003E_k__BackingField dataType="ObjectRef">2892344289</_x003C_tilemap_x003E_k__BackingField>
             <_x003C_tilemapRenderer_x003E_k__BackingField dataType="ObjectRef">3883567720</_x003C_tilemapRenderer_x003E_k__BackingField>
             <active dataType="Bool">true</active>
+            <attackTimerCooldown />
             <gameobj dataType="ObjectRef">1207237209</gameobj>
             <rects dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Rect]]" id="1220160542">
               <_items dataType="Array" type="Duality.Rect[]" id="3830394512" length="0" />
@@ -1535,6 +1549,87 @@
       <prefabLink />
     </item>
     <item dataType="ObjectRef">2786082065</item>
+    <item dataType="Struct" type="Duality.GameObject" id="2056912491">
+      <active dataType="Bool">true</active>
+      <children />
+      <compList dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Component]]" id="1648968729">
+        <_items dataType="Array" type="Duality.Component[]" id="1710878030" length="8">
+          <item dataType="Struct" type="Duality.Components.Transform" id="122260127">
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">2056912491</gameobj>
+          </item>
+          <item dataType="Struct" type="TilemapJam.CustomActorRenderer" id="3246288034">
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">2056912491</gameobj>
+          </item>
+          <item dataType="Struct" type="TilemapJam.JumpAnimation" id="841440155">
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">2056912491</gameobj>
+          </item>
+          <item dataType="Struct" type="TilemapJam.Bunny" id="4134191173">
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">2056912491</gameobj>
+          </item>
+          <item dataType="Struct" type="TilemapJam.CharacterController" id="646390302">
+            <active dataType="Bool">true</active>
+            <gameobj dataType="ObjectRef">2056912491</gameobj>
+          </item>
+        </_items>
+        <_size dataType="Int">5</_size>
+        <_version dataType="Int">5</_version>
+      </compList>
+      <compMap dataType="Struct" type="System.Collections.Generic.Dictionary`2[[System.Type],[Duality.Component]]" id="3847752576" surrogate="true">
+        <header />
+        <body>
+          <keys dataType="Array" type="System.Object[]" id="2840330035">
+            <item dataType="ObjectRef">709499588</item>
+            <item dataType="ObjectRef">2876068992</item>
+            <item dataType="Type" id="2224678950" value="TilemapJam.JumpAnimation" />
+            <item dataType="Type" id="2387574458" value="TilemapJam.Bunny" />
+            <item dataType="ObjectRef">3973958038</item>
+          </keys>
+          <values dataType="Array" type="System.Object[]" id="2277165752">
+            <item dataType="ObjectRef">122260127</item>
+            <item dataType="ObjectRef">3246288034</item>
+            <item dataType="ObjectRef">841440155</item>
+            <item dataType="ObjectRef">4134191173</item>
+            <item dataType="ObjectRef">646390302</item>
+          </values>
+        </body>
+      </compMap>
+      <compTransform dataType="ObjectRef">122260127</compTransform>
+      <identifier dataType="Struct" type="System.Guid" surrogate="true">
+        <header>
+          <data dataType="Array" type="System.Byte[]" id="715775321">/b6GJx9Fp0CXLxhoxe3QMQ==</data>
+        </header>
+        <body />
+      </identifier>
+      <initState dataType="Enum" type="Duality.InitState" name="Initialized" value="1" />
+      <name dataType="String">Bunny</name>
+      <parent />
+      <prefabLink dataType="Struct" type="Duality.Resources.PrefabLink" id="3311034971">
+        <changes dataType="Struct" type="System.Collections.Generic.List`1[[Duality.Resources.PrefabLink+VarMod]]" id="4001136212">
+          <_items dataType="Array" type="Duality.Resources.PrefabLink+VarMod[]" id="2829587684" length="4">
+            <item dataType="Struct" type="Duality.Resources.PrefabLink+VarMod">
+              <childIndex dataType="Struct" type="System.Collections.Generic.List`1[[System.Int32]]" id="3549661384">
+                <_items dataType="Array" type="System.Int32[]" id="3588094572"></_items>
+                <_size dataType="Int">0</_size>
+                <_version dataType="Int">1</_version>
+              </childIndex>
+              <componentType dataType="ObjectRef">2387574458</componentType>
+              <prop dataType="MemberInfo" id="1845502686" value="P:TilemapJam.Alive:AttackedCooldownTime" />
+              <val dataType="Float">300</val>
+            </item>
+          </_items>
+          <_size dataType="Int">1</_size>
+          <_version dataType="Int">5</_version>
+        </changes>
+        <obj dataType="ObjectRef">2056912491</obj>
+        <prefab dataType="Struct" type="Duality.ContentRef`1[[Duality.Resources.Prefab]]">
+          <contentPath dataType="String">Data\Prefabs\Bunny.Prefab.res</contentPath>
+        </prefab>
+      </prefabLink>
+    </item>
     <item dataType="ObjectRef">3327357866</item>
     <item dataType="ObjectRef">890492272</item>
     <item dataType="ObjectRef">1138827133</item>
