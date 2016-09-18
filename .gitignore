@@ -1,0 +1,21 @@
+# .gitignore generated on 09/18/2016 13:09:57
+# ENCODING: UTF-8
+
+# Directories
+#
+.git
+Backup
+Source/Code/**/bin
+Source/Code/**/obj
+Source/Packages
+
+# Files
+#
+*.csproj.user
+*.suo
+AppData.dat
+DualityEditor.exe
+EditorUserData.xml
+logfile*.txt
+perflog*.txt
+
